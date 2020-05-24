@@ -263,7 +263,50 @@ body {
 	display: block;
 		
 }
+/*####################About us#############################*/
 
+#aboutus{
+	margin-top: 40px;
+	margin-left:30px;
+}
+#aboutus p{
+	font-size: 25px;
+}
+.check i{
+	font-size: 20px;
+	font-weight: 16px;
+}
+.check{
+  margin-bottom: 10px;
+}
+
+#projects{
+	text-align: center;
+	margin-top: 100px;
+	margin-right: 30px;
+	float:right;
+}
+.images{
+	margin-top:100px;
+	display: inline-table;
+    margin-bottom: 100px;
+}
+#more{
+	margin-top: 100px;
+	margin-left: 50px;
+	margin-right: 170px;
+	float: left;
+	margin-bottom: 40px;
+}
+#more p{
+	font-size: 20px;
+}
+legend{
+	font-size: 25px;
+}
+#webmaintenance p{
+	font-size: 18px;
+}
 /*####################Contact Us#############################*/
 
 .header {
@@ -522,13 +565,13 @@ span.error {
 
 /*End of contact us*/ 
 
-/*****************Login Form *******************/
+/*****************Login Form  *******************/
+
 #login{
     width: 603px;
     padding: 20px;
     border: 2px solid black;
-    margin-top: 20px;
-    margin-left: 260px;
+    margin-left: 300px;
 }
  #login img{
 	 float:left;
