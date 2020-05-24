@@ -395,13 +395,13 @@
 	text-transform: uppercase;	
 	font-size: 2em;
 }#wowslider-container1 .ws_images > ul{
-	animation: wsBasic 32s infinite;
-	-moz-animation: wsBasic 32s infinite;
-	-webkit-animation: wsBasic 32s infinite;
+	animation: wsBasic 36s infinite;
+	-moz-animation: wsBasic 36s infinite;
+	-webkit-animation: wsBasic 36s infinite;
 }
-@keyframes wsBasic{0%{left:-0%} 6.25%{left:-0%} 12.5%{left:-100%} 18.75%{left:-100%} 25%{left:-200%} 31.25%{left:-200%} 37.5%{left:-300%} 43.75%{left:-300%} 50%{left:-400%} 56.25%{left:-400%} 62.5%{left:-500%} 68.75%{left:-500%} 75%{left:-600%} 81.25%{left:-600%} 87.5%{left:-700%} 93.75%{left:-700%} }
-@-moz-keyframes wsBasic{0%{left:-0%} 6.25%{left:-0%} 12.5%{left:-100%} 18.75%{left:-100%} 25%{left:-200%} 31.25%{left:-200%} 37.5%{left:-300%} 43.75%{left:-300%} 50%{left:-400%} 56.25%{left:-400%} 62.5%{left:-500%} 68.75%{left:-500%} 75%{left:-600%} 81.25%{left:-600%} 87.5%{left:-700%} 93.75%{left:-700%} }
-@-webkit-keyframes wsBasic{0%{left:-0%} 6.25%{left:-0%} 12.5%{left:-100%} 18.75%{left:-100%} 25%{left:-200%} 31.25%{left:-200%} 37.5%{left:-300%} 43.75%{left:-300%} 50%{left:-400%} 56.25%{left:-400%} 62.5%{left:-500%} 68.75%{left:-500%} 75%{left:-600%} 81.25%{left:-600%} 87.5%{left:-700%} 93.75%{left:-700%} }
+@keyframes wsBasic{0%{left:-0%} 5.56%{left:-0%} 11.11%{left:-100%} 16.67%{left:-100%} 22.22%{left:-200%} 27.78%{left:-200%} 33.33%{left:-300%} 38.89%{left:-300%} 44.44%{left:-400%} 50%{left:-400%} 55.56%{left:-500%} 61.11%{left:-500%} 66.67%{left:-600%} 72.22%{left:-600%} 77.78%{left:-700%} 83.33%{left:-700%} 88.89%{left:-800%} 94.44%{left:-800%} }
+@-moz-keyframes wsBasic{0%{left:-0%} 5.56%{left:-0%} 11.11%{left:-100%} 16.67%{left:-100%} 22.22%{left:-200%} 27.78%{left:-200%} 33.33%{left:-300%} 38.89%{left:-300%} 44.44%{left:-400%} 50%{left:-400%} 55.56%{left:-500%} 61.11%{left:-500%} 66.67%{left:-600%} 72.22%{left:-600%} 77.78%{left:-700%} 83.33%{left:-700%} 88.89%{left:-800%} 94.44%{left:-800%} }
+@-webkit-keyframes wsBasic{0%{left:-0%} 5.56%{left:-0%} 11.11%{left:-100%} 16.67%{left:-100%} 22.22%{left:-200%} 27.78%{left:-200%} 33.33%{left:-300%} 38.89%{left:-300%} 44.44%{left:-400%} 50%{left:-400%} 55.56%{left:-500%} 61.11%{left:-500%} 66.67%{left:-600%} 72.22%{left:-600%} 77.78%{left:-700%} 83.33%{left:-700%} 88.89%{left:-800%} 94.44%{left:-800%} }
 
 #wowslider-container1 .ws_bullets  a img{
 	position:absolute;
