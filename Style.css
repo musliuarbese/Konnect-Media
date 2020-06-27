@@ -40,23 +40,16 @@ body {
 	float: right;
 	width: auto;
 	/* margin: 3.7% 10% 0px 0px; */
-    
 }
-.header ul li {
-	float: left;
-	height: 30px;
-	width:140px;
-	display: inline;
-}
+
 .header ul li a {
 	color: white;
 	font-size: 16px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	letter-spacing: -10px;
+	letter-spacing: -1px;
 	text-decoration: none; 
 	text-align: center;
-	padding: 50px 50px 42px 15px;
 }
 
 
@@ -335,33 +328,26 @@ legend{
 #header-menu {
 	float: right;
 	width: auto;
-	margin: 3.7% 10% 0px 0px;
+	margin: 3.7% 0% 0px 0px;
     
 }
 .header ul li {
-	float: left;
-	height: 3%;
+	margin-right: 20px;
 	display: inline;
 }
-.header ul li a {
-	color: white;
-	font-size: 16px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	letter-spacing: -1px;
-	text-decoration: none; 
-	text-align: center;
-	padding: 50px 40px 42px 15px;
-	/* border-radius: 10px; */
+
+i{
+	margin-right: 4px;
+	color:white;
 }
 
-	#content1 {
-		background-image: url(img/websiteSkills.jpg);
-		width:auto;
-		height: 557px;
-	}
+#content1 {
+	background-image: url(img/websiteSkills.jpg);
+	width:auto;
+	height: 557px;
+}
 #c_us{
-	width: 112px;
+	width: auto;
 }
 #map{
 	width:100%;
@@ -371,27 +357,6 @@ legend{
 	padding: 50px 125px;
 	font-size: 13px;
 	font-style: Verdana, Tahoma, sans-serif;
-}
-input, textarea {
-	padding: 10px;
-	border: 1px solid #E5E5E5;
-	width: 200px;
-	color: black;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
-}
-textarea {
-	width: 400px;
-	height: 150px;
-	max-width: 400px;
-	line-height: 18px;
-}
-input:hover, textarea:hover, input:focus, textarea:focus {
-	border-color: 1px solid #C9C9C9;
-	box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px;
-	-moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px;
 }
 .form label {
 	margin-left: 10px;
@@ -406,6 +371,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 }
+
 #Kontakti h1 {
 	color: black;
 	font-family: Arial, Helvetica, sans-serif;
@@ -442,9 +408,8 @@ input:hover, textarea:hover, input:focus, textarea:focus {
 	width: 430px;
 	float: left;
 }
-.form-contact .holder {
+ .holder h4{
 	margin: 5px 0;
-	float: left;
 }
 .green {
 	color: #32A700;
@@ -473,8 +438,8 @@ label {
 	text-shadow: 0 1px 2px #000000;
 	text-transform: uppercase;
 	padding: 0;
-	margin-top: 5px;
-	float: left;
+	margin-top:20px;
+	margin-right:20px;
 }
 #leftRegister {
 	float: left;
@@ -578,7 +543,7 @@ span.error {
 	 margin-right: 30px;
 	 text-align: center;
 } 
-h1{
+#login h1{
 	margin-left: 200px;
 }
  .loginButtoni{
@@ -595,31 +560,109 @@ h1{
 	text-transform: uppercase;
 	padding: 0;
 	margin-top: 5px;
-	margin-left:350px;
+	margin-left:250px;
 }
-
-#loginButtoni1 {
-    border: hidden;
-    border-radius: 13px;
-    background: url(img/send-btn.png) no-repeat left top;
-    width: 112px;
-    height: 45px;
-    text-align: center;
-    line-height: 45px;
-    cursor: pointer;
-    color: #FFF;
-    text-shadow: 0 1px 2px #000000;
-    text-transform: uppercase;
-    padding: 0;
-    margin-top: 5px;
-    margin-left: 150px;
+.formButoni{
+	display: inline-table;
 }
-
 
 fieldset {
 	border: hidden;
 }
 #email_validation, #pwd_validation{
+	display: none;
+}
+
+span.error {
+	background-color: #FFDFDF;
+	color: red;
+}
+
+
+ #notRegistered{
+	 float:center;
+	 margin-left:299px;
+	 width: 600px;
+ }
+ #notRegistered h1{
+	 margin-left:136px;
+	 width:412px;
+ }
+ #notRegistered .loginButtoni{
+	 margin-left: 286px;
+ }
+
+ #SignupForm{
+	 margin-top:100px;
+     margin-left: 400px;
+ }
+
+ #SignupForm h1{
+	margin-bottom:50px;
+ }
+ #servicesContent {
+	float: left;
+	width: 100%;
+	height: 1000px;
+	background-color: #ffffff;
+}
+.clear1{
+	width: 100%;
+	height: 10px;
+	clear : both;
+}
+input, textarea {
+	padding: 10px;
+	border: 1px solid brown;
+	width: 200px;
+	color: #999999;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+}
+textarea {
+	width: 400px;
+	height: 150px;
+	max-width: 400px;
+	line-height: 18px;
+}
+input:hover, textarea:hover, input:focus, textarea:focus {
+	border-color: 1px solid #C9C9C9;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 8px;
+}
+.form label {
+	margin-left: 10px;
+	color: #999999;
+}
+.submit input {
+	width: 100px;
+	height: 40px;
+	background-color: #090;
+	color: #FFF;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.green {
+	color: #32A700;
+}
+.clear {
+	clear: both;
+}
+label {
+	float: left;
+	line-height: 1.25em;
+	margin: 0 8px 0 0;
+	padding: 6px 0;
+	text-align: left;
+	width: 80px;
+}
+fieldset {
+	border: hidden;
+}
+#email_validation, #name_validation, #emailL_validation, #name_validation, #gender_validation, #pwd1_validation, #pwd2_validation {
 	display: none;
 }
 label.required:after {
@@ -630,58 +673,28 @@ span.error {
 	background-color: #FFDFDF;
 	color: red;
 }
-.row {
-	margin: 5px;
+hr{
+	margin-top: 20px;
+	margin-bottom: 30px;
 }
-#leftRegister h3{
-	margin: 0;
+
+/*******************Admin Page gif**************/
+
+#welcomeAdmin{
+	width: 1100px;
+    height: 300px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: rgb(179, 204, 204);
+    border-radius: 10px;
+    
 }
-#footer{
-	float:left;
-	background-color: #272622;
-	 width: 1300px;
-	 height:130px;
+
+#welcomeAdmin h2, p{
+	margin-top: 20px;
+	margin-left:30px;
 }
-#credentials {
-   float: left;
-   height: 20px;
-   width: 500px;
-   margin-top: 30px;
+
+#adminPermbajtja{
+	background-color: rgb(242, 230, 255);
 }
-#copyright {
-   width: 100%;
-   float: left;
-   margin: 18px 0 0 30px;
-   color: white;
-   font-size: 17px;
-   font-weight: normal;
-   text-decoration: none;
-}
-#footer-info img{
-   float:right;
-   margin-right:90px;
-   width:300px;
-   margin-top:10px;
-}
-#footer-info .reachus{
-   display: block;
-   font-size: 14px;
-   color: white;
-   text-align: right;
-   margin-right:60px;
-   margin-top:70px;
-}
-@media screen and (max-width: 200px){
-   #clear, .reachus {
-	   float: none!important;
-	   text-align: center!important;
-   }
-   }
-#footer-info p{
-   font-family: 'Raleway', sans-serif;
-   line-height: 1.9em;
-   font-weight: 300;
-   display: block;
-	   
-}
- 
