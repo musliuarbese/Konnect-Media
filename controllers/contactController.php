@@ -1,15 +1,14 @@
 <?php
 
-include ('../config/database.php');
+include ('C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/config/database.php');
 
-
-class postsController
+class contactController
 {
    protected $db;
 
     public function __construct()
     {
-       $this->db = new Database;
+       $this->db = new database;
     }
 
     public function all()
@@ -17,14 +16,12 @@ class postsController
        $query = $this->db->pdo->query('SELECT FROM * contact');
        return $query->fetchAll();
     }
-
+   
     public function store($request)
     {
-        isset($request['is_admin']) ? $isAdmin == 1 : $isAdmin == 2;
-        $password = password_hash($request['password'], PASSWORD_DEFAULT);
-
-        $quers = $this->db->pdo->prepare('INSERT INTO posts(name, email, gender, employeed, country, subject, message, is_admin)
-        VALUES (:name, :email, :gender, :employeed, :country, :subject, :message, :is_admin)');
+        
+        $query = $this->db->pdo->prepare('INSERT INTO contact(name, email, gender, employeed, country, subject, message)
+        VALUES (:name, :email, :gender, :employeed, :country, :subject, :message)');
         $query->bindParam(':name', $request['name']);
         $query->bindParam(':email', $request['email']);
         $query->bindParam(':gender', $request['gender']);
@@ -32,14 +29,13 @@ class postsController
         $query->bindParam(':country', $request['country']);
         $query->bindParam(':subject', $request['subject']);
         $query->bindParam(':message', $request['message']);
-        $query->bindParam(':is_admin', $isAdmin);
-
-        return header('Location: ./contact.php');
+        $query->execute();
+        return header('Location: Home.php');
     }
     
     public function edit($contact_id)
     {
-        $query = $this->db->pdo->prepare('SELECT * from contact  WHERE posts_id = :posts_id');
+        $query = $this->db->pdo->prepare('SELECT * from contact  WHERE contact_id = :contact_id');
         $query->execute(['contact_id' => $contact_id]);
 
         return $query->fetch();
@@ -47,8 +43,7 @@ class postsController
     public function update($contact_id, $request)
     {
 
-        isset($request['is_admin']) ? $isAdmin == 1 : $isAdmin == 2;
-        $query = $this->db->pdo->prepare('UPDATE posts SET name = :name, email = :email, gender = :email, employeed = :employeed, country = :country, subject = :subject, message = :message, is_admin = :is_admin WHERE contact_id = :contact_id');
+        $query = $this->db->pdo->prepare('UPDATE contact SET name = :name, email = :email, gender = :email, employeed = :employeed, country = :country, subject = :subject, message = :message, is_admin = :is_admin WHERE contact_id = :contact_id');
         $query->execute([
             'name'=> $request['name'],
             'email'=> $request['email'],
@@ -57,7 +52,6 @@ class postsController
             'country'=> $request['country'],
             'subject'=> $request['subject'],
             'message'=> $request['message'],
-            'is_admin'=> $isAdmin,
             'contact_id'=> $contact_id
              
         ]);

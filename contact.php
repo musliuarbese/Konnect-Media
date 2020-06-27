@@ -28,7 +28,7 @@
     <p><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</strong> </p>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     <p><em>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</em></p>
-    <form action="../createContact.php" class="form-contact" method="post" onsubmit="validateForm();">
+    <form action="createContact.php" class="form-contact" method="post" onsubmit="validateForm();">
       <div class="holder">
         <label for="name">Name:<span class="green">*</span> </label>
         <input type="text" name="name" value="" id="name"/>
