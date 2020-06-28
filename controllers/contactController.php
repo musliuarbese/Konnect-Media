@@ -13,10 +13,40 @@ class contactController
 
     public function all()
     {
-       $query = $this->db->pdo->query('SELECT FROM * contact');
-       return $query->fetchAll();
+       $query = $this->db->pdo->prepare('SELECT * FROM contact');
+       $query->execute();
+       $result= $query->fetchAll();
+      // print_r($result);
+      
+      foreach($result as $row){
+        $contact_id=$row['contact_id']; 
+        $name =$row['name'];
+        $message=$row['message'];
+        $gender=$row['gender'];
+        $subject=$row['subject'];
+        $country=$row['country'];
+         ?>
+      <form action="deleteContact.php" class="form-contact" method="post" onsubmit="">
+
+     <div class="holder"> 
+        <br><br><label for="name">Name: <span class="green"></span></label> 
+        <input name="name" id="name" value='<?php echo $name; ?>'></input>
+      </div>
+      <div class="holder"> 
+        <br><br><label for="message">Message: <span class="green"></span></label>
+        <textarea rows="10" cols="10" name="message" id="message"><?php echo 'Subject: ', $subject; echo "\r\n"; echo 'Message:',  $message; ?></textarea>
+         <span id="message_validation" class="error"></span>
+      </div>
+      
+       <input type="submit"  value="DELETE" class="formButoni" onclick=""/>
+    </form>
+
+
+         <?php
+      }
+     
     }
-   
+    
     public function store($request)
     {
         
@@ -32,39 +62,14 @@ class contactController
         $query->execute();
         return header('Location: Home.php');
     }
-    
-    public function edit($contact_id)
-    {
-        $query = $this->db->pdo->prepare('SELECT * from contact  WHERE contact_id = :contact_id');
-        $query->execute(['contact_id' => $contact_id]);
-
-        return $query->fetch();
-    }
-    public function update($contact_id, $request)
-    {
-
-        $query = $this->db->pdo->prepare('UPDATE contact SET name = :name, email = :email, gender = :email, employeed = :employeed, country = :country, subject = :subject, message = :message, is_admin = :is_admin WHERE contact_id = :contact_id');
-        $query->execute([
-            'name'=> $request['name'],
-            'email'=> $request['email'],
-            'gender'=> $request['gender'],
-            'employeed'=> $request['employeed'],
-            'country'=> $request['country'],
-            'subject'=> $request['subject'],
-            'message'=> $request['message'],
-            'contact_id'=> $contact_id
-             
-        ]);
-           return header('Location: ./contact.php');
-    }
 
     public function destroy($contact_id)
     {
         $query = $this->db->pdo->prepare('DELETE from contact WHERE contact_id = :contact_id');
         $query->execute(['contact_id' => $contact_id]);
-       return header('Location: ./contact.php');
+       return header('Location: ./showContact.php');
     }
 }
-
 ?>
+
 

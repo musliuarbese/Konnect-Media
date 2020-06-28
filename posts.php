@@ -31,7 +31,7 @@
 		
 		list( $title, $subtitle , $content , $photo )=$row;
 		echo'<h2>'.$title.'</h2>';
-		echo'<h5>'.$subtitle.'</h5>';
+		echo'<h5>'.$subtitle.'</h5>'; 
 		echo'<p>'.$content.'</p>';
         ?>
         <img src="<?php echo $photo; ?>" />

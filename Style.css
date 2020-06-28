@@ -316,7 +316,8 @@ legend{
   }
  
 .header img{
-    float:left;
+	float:left;
+	height:107px;
     margin-top:0;
 	margin-left:60px;
    
@@ -698,3 +699,12 @@ hr{
 #adminPermbajtja{
 	background-color: rgb(242, 230, 255);
 }
+
+ /*************** Services ************/
+.ser{
+	float: left; 
+	margin-left: 140px;
+	width: 420px;
+	display:inline-table;
+}
+

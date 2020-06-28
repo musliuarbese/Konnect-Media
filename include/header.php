@@ -4,7 +4,7 @@
             <ul id="header-menu">
                 <li> <a class = "active" href="Home.php"><i class="fa fa-fw fa-home"></i>HOME</a></li>
 				<li> <a href="aboutus.php"><i class="fa fa-group"></i>ABOUT US</a></li>
-				<li> <a href="#"><i class='far fa-clipboard'></i>PRODUCTS</a></li>
+				<li> <a href="services.php"><i class='far fa-clipboard'></i>SERVICES</a></li>
 				<li> <a href="posts.php"><i class='far fa-images'></i>POSTS</a></li>
 				<li> <a href="contact.php"><i id="c_us" class="fa fa-fw fa-address-book"></i>CONTACT US</a></li>
 
