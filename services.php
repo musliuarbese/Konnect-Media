@@ -17,30 +17,53 @@
         <?php
             include('include/header.php');
         ?>
-
-        <div class="ser">
-         
-                <h2>Website Design<img src="img/websitesDesign.png" /></h2>
-                <p>
-                    A website designed uniquely for your company. Web <br />
-                    design is one of the most important parts of your <br />
-                    business. Our award-winning designers will help <br />
-                    you welcome new customers with a clean, <br />
-                    professional website.
-                </p>
-         
+<?php
+if(isset($_SESSION['logged_in']) )
+{
+    ?>  <div id="serviceTitle">
+            <h1>Our Marketing Services</h1>
+            <h3>***************************</h3>
         </div>
-        <div class="ser">
-           
-                <h2>Website Design<img src="img/websitesDesign.png" /></h2>
-                <p>
-                    A website designed uniquely for your company. Web <br />
-                    design is one of the most important parts of your <br />
-                    business. Our award-winning designers will help <br />
-                    you welcome new customers with a clean, <br />
-                    professional website.
-                </p>
-           
-        </div>
+	      
+    <?php
+	       $select = 'SELECT title , icon , content FROM services';
+	       $result = mysqli_query($conn,$select) or die ('invalid query:'. mysqli_error());
+	
+	while($row = mysqli_fetch_row($result))
+	{
+		
+		list( $title, $icon , $content)=$row;
+	
+ 
+    ?>
+    <div class="ser">
+         
+         <h2><?php echo $title?><img src="<?php echo $icon; ?>" /></h2>
+         <p>
+             <?php echo $content ?>
+         </p>
+    </div>
+		<?php
+	}
+}else{
+		  echo 'You should be signed in if you want to read post in this page!';
+	  }
+	?>
+          
+        <script>
+            window.onscroll = function() {myFunction()}; // kur useri ben scroll faqen, ekzekutohet myfunction()
+            // merr id hederi e run te header
+            var header = document.getElementById("myHeader");
+            //e merr pozicionin e kompensuar
+            var sticky = header.offsetTop;
+            
+            function myFunction() { // e te metoda myfunction mundeson qe
+              if (window.pageYOffset > sticky) { // nese don me bo scroll //duhet klasen sticky me shtu ne heder kur na bojm scroll 
+                header.classList.add("sticky"); 
+              } else {
+                header.classList.remove("sticky"); // edhe me hjek sticky kur na sbojm scroll me ta kthy nvend prap qysh je kon
+              }
+            }
+            </script>
     </body>
 </html>

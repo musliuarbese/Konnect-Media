@@ -703,8 +703,20 @@ hr{
  /*************** Services ************/
 .ser{
 	float: left; 
+	border: 1px solid brown;
+	margin-top:50px;
 	margin-left: 140px;
 	width: 420px;
+	height:350px;
 	display:inline-table;
 }
-
+.ser h2 {
+	margin-left:30px;
+}
+.ser p {
+	margin-right:10px;
+}
+#serviceTitle h1, h3{
+	color:rgb(9, 9, 129);
+	text-align: center;
+}

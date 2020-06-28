@@ -69,7 +69,8 @@ chart.render();
         <a href="Home.html"> <img src="img/konnect-media.png"></a>
           <ul id="header-menu">
              <li><i class='far fa-user'></i><a href="include/show_signup.php">Users</a></li>
-             <li><i class='far fa-images'></i><a href="adminPosts.php">Posts</a></li>
+			 <li><i class='far fa-images'></i><a href="adminPosts.php">Posts</a></li>
+			 <li><i class='far fa-images'></i><a href="adminServices.php">Services</a></li>
 	         <li><i class="fa fa-sitemap"></i><a href="Home.php">Live Site</a></li>
        
               <?php
@@ -90,7 +91,7 @@ chart.render();
 	border-radius: 10px; margin-left:60px;">
 	<img src = "img/hellogif.gif" style = "float:right; width:210px;">
 	<div style = "margin-left:30px;">
-	   <h1 style = "margin-top:30px;">Welcome Back! <?php $name;?></h1>
+	   <h1 style = "margin-top:30px;">Welcome Back! <?php $_SESSION['logged_in']='name';?></h1>
 	   <p>You have completed 40% of your goal this week</p>
 	   <p>Start a new goal & improve your result</p>
 	   

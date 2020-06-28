@@ -91,6 +91,21 @@
     <input class="butoni1" name="buton1" type="button" />
     <input class="butoni1" name="buton1" type="button" />
   </div>
+  <script>
+            window.onscroll = function() {myFunction()}; // kur useri ben scroll faqen, ekzekutohet myfunction()
+            // merr id hederi e run te header
+            var header = document.getElementById("myHeader");
+            //e merr pozicionin e kompensuar
+            var sticky = header.offsetTop;
+            
+            function myFunction() { // e te metoda myfunction mundeson qe
+              if (window.pageYOffset > sticky) { // nese don me bo scroll //duhet klasen sticky me shtu ne heder kur na bojm scroll 
+                header.classList.add("sticky"); 
+              } else {
+                header.classList.remove("sticky"); // edhe me hjek sticky kur na sbojm scroll me ta kthy nvend prap qysh je kon
+              }
+            }
+            </script>
   </div>
   <?php
 	include('include/footer.php');

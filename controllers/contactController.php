@@ -26,7 +26,7 @@ class contactController
         $subject=$row['subject'];
         $country=$row['country'];
          ?>
-      <form action="deleteContact.php" class="form-contact" method="post" onsubmit="">
+      <form action="deleteContact.php" class="form-contact" method="post" onsubmit = "destroy($contact_id);">
 
      <div class="holder"> 
         <br><br><label for="name">Name: <span class="green"></span></label> 
@@ -67,7 +67,7 @@ class contactController
     {
         $query = $this->db->pdo->prepare('DELETE from contact WHERE contact_id = :contact_id');
         $query->execute(['contact_id' => $contact_id]);
-       return header('Location: ./showContact.php');
+       return header('Location: deleteContact.php');
     }
 }
 ?>
