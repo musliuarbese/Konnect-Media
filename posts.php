@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Posts</title>
+<title>Posts - Konnect Media</title>
 <link rel="stylesheet" type="text/css" href="Style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -21,7 +21,7 @@
 <?php
       if(isset($_SESSION['logged_in']) ){
     
-	echo '<h2>Posts in this page</h2>';
+	echo '<h1>Posts in this page</h1>';
 	echo '<h3>***************************</h3>';
 	$select = 'SELECT title , subtitle , content , photo FROM `posts`';
 	$result = mysqli_query($conn,$select) or die ('invalid query:'. mysqli_error());
@@ -46,8 +46,5 @@
 		  echo 'You should be signed in if you want to read post in this page!';
 	  }
 	?>
-	<!-- <div>
-   <img src = "img/delevopment.gif";>
-	</div> -->
 </body>
 </html>

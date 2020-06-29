@@ -3,7 +3,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sign Up</title>
+<title>Sign Up - Konnect Media</title>
 <link rel="stylesheet" type="text/css" href="Style.css" />
 <script src="myjavascript.js" type="text/javascript"></script>
 <style> .error {color: #FF0000;} </style>

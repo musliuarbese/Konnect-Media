@@ -2,13 +2,12 @@
 
 require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/contactController.php';
 
-
-
- $contact = new contactController; 
+$contact = new contactController; 
+echo $contact_id; 
 
 if(isset($_POST))
 {
-    $contact->destroy($contact_id);
+    $contact->destroy($_POST['contact_id']); 
 }
 
 ?>

@@ -8,7 +8,7 @@ class contactController
 
     public function __construct()
     {
-       $this->db = new database;
+      $this->db = new database;
     }
 
     public function all()
@@ -21,16 +21,21 @@ class contactController
       foreach($result as $row){
         $contact_id=$row['contact_id']; 
         $name =$row['name'];
+        $employeed =$row['employeed'];
+        $email =$row['email'];
         $message=$row['message'];
         $gender=$row['gender'];
         $subject=$row['subject'];
         $country=$row['country'];
          ?>
-      <form action="deleteContact.php" class="form-contact" method="post" onsubmit = "destroy($contact_id);">
+      <form action="deleteContact.php" class="form-contact" method="post" onsubmit = "destroy(<?php echo $contact_id; ?>);">
 
      <div class="holder"> 
-        <br><br><label for="name">Name: <span class="green"></span></label> 
-        <input name="name" id="name" value='<?php echo $name; ?>'></input>
+     
+        <br> <label for="email">Email:<span class="green"></span> </label>
+        <input type="text" name="email" value="<?php echo $email;  ?>" id ="email"/>
+        <br><br> <label for="contact_id">ContactID:<span class="green"></span> </label>
+        <input type="text" name="contact_id" value="<?php echo $contact_id;  ?>" id ="contact_id"/>
       </div>
       <div class="holder"> 
         <br><br><label for="message">Message: <span class="green"></span></label>
@@ -60,14 +65,15 @@ class contactController
         $query->bindParam(':subject', $request['subject']);
         $query->bindParam(':message', $request['message']);
         $query->execute();
-        return header('Location: Home.php');
+        return header('Location: home.php');
     }
-
+   
     public function destroy($contact_id)
     {
+       
         $query = $this->db->pdo->prepare('DELETE from contact WHERE contact_id = :contact_id');
         $query->execute(['contact_id' => $contact_id]);
-       return header('Location: deleteContact.php');
+       return header('Location: showContact.php');
     }
 }
 ?>

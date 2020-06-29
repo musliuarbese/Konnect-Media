@@ -18,40 +18,46 @@ class servicesController
        $result= $query->fetchAll();
       // print_r($result);
       
-      foreach($result as $row){
+      foreach($result as $row)
+      {
         $services_id=$row['services_id']; 
-        $tile =$row['title'];
+        $title =$row['title'];
         $icon=$row['icon'];
-        $content=$row['content'];
-         ?>
-      <form action="" class="form-contact" method="post" onsubmit = "">
-
-     <div class="holder"> 
-        <br><br><label for="title">Title: <span class="green"></span></label> 
-        <input name="title" id="title" value='<?php echo $title; ?>'></input>
-      </div>
-      <div class="holder"> 
-        <br><br><label for="icon">Icon: <span class="green"></span></label> 
-        <input name="icon" id="icon" value='<?php echo $icon; ?>'></input>
-      </div>
-      <div class="holder"> 
-        <br><br><label for="content">Message: <span class="green"></span></label>
-        <textarea rows="10" cols="10" name="content" id="content"><?php echo $content; ?></textarea>
-      </div>
+       $content=$row['content'];
       
-       <input type="submit"  value="=>SWAP FOR MORE=>" class="Butoni" onclick=""/>
-    </form>
+         ?>
+      <form action="editServices.php" class="form-contact" method="post" onsubmit = "edit(<?php $_POST['services_id']?>);">
 
+<div class="holder"> 
+     <label for="services_id">ServicesID:<span class="green"></span> </label>
+    <input type="text" name="services_id" value="<?php echo $services_id;  ?>" id ="services_id"/>
+      </div>
+   <div class = "holder">
+   <br><label for="title">Title: <span class="green"></span></label> 
+   <input name="title" id="title" value="<?php echo $title; ?>"></input>
+ </div>
+ <div class="holder"> 
+   <br><br><label for="icon">Icon: <span class="green"></span></label> 
+   <input name="icon" id="icon" value="<?php echo $icon; ?>"></input>
+ </div>
+ <div class="holder"> 
+   <br><br><label for="content">Content: <span class="green"></span></label>
+   <textarea rows="10" cols="10" name="content" id="content" ><?php echo $content;?></textarea> 
+ </div><br>
+ <div id = "butonat">
+  <input type="submit"  value="EDIT" class="formButoni" onclick=""><br><br>
+  <hr>
 
-         <?php
-      }
-     
+  </div>  
+  </form>
+     <?php 
     }
+  }
     
     public function store($request)
     {
         
-        $query = $this->db->pdo->prepare('INSERT INTO services(title, icon, content)
+        $query = $this->db->pdo->prepare('INSERT INTO services(title, icon, content) 
         VALUES (:title, :icon, :content)');
         $query->bindParam(':title', $request['title']);
         $query->bindParam(':icon', $request['icon']);
@@ -64,6 +70,13 @@ class servicesController
         $query = $this->db->pdo->prepare('SELECT * FROM services WHERE services_id = :services_id');
         $query->execute(['services_id' => $services_id]);
         return $query->fetch();
+
+          if(isset($_POST['submit'])){
+          $title = $_POST['title'];
+          $icon = $_POST['icon'];
+          $content = $_POST['content'];
+          return header('Location: showServices.php');
+        }
     }
     public function update($services_id, $request)
     {
@@ -71,9 +84,10 @@ class servicesController
         $query->execute([
             'title' => $request['title'],
             'icon' => $request['icon'],
-            'content' => $request['title'],
+            'content' => $request['content'],
             'services_id' => $request['services_id']
         ]);
+        return header('Location: showServices.php');
     }
     public function destroy($services_id)
     {

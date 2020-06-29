@@ -28,9 +28,10 @@ $dataPoints = array(
 <html>
 
 <head>
-    <title>Admin Page - Konnect Media</title>
+    <title>Admin Dashboard - Konnect Media</title>
     <link rel="stylesheet" type="text/css" href="Style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
 <!-- Start WOWSlider.com HEAD section -->
@@ -68,10 +69,14 @@ chart.render();
     <div class = "header" id = "myHeader">
         <a href="Home.html"> <img src="img/konnect-media.png"></a>
           <ul id="header-menu">
-             <li><i class='far fa-user'></i><a href="include/show_signup.php">Users</a></li>
-			 <li><i class='far fa-images'></i><a href="adminPosts.php">Posts</a></li>
-			 <li><i class='far fa-images'></i><a href="adminServices.php">Services</a></li>
-	         <li><i class="fa fa-sitemap"></i><a href="Home.php">Live Site</a></li>
+             <li><i class='far fa-list-alt'></i><a href="adminPage.php">MY DASHBOARD</a></li>
+			       <li><i class='far fa-images'></i><div class="dropdown"><button class="dropbtn"><a href="#">USER</a></button>
+                     <div class="dropdown-content">
+                     <a href="include/show_signup.php"><i class='fas fa-users'></i>Show Users</a> 
+                     <a href="adminPosts.php"><i class='fas fa-users'></i>Posts</a>
+                     <a href="showContact.php"><i class='far fa-address-card'></i></i>User Contacts</a>
+                     <a href="adminServices.php"><i class='far fa-clipboard'></i>Services</a></div></div></li>
+	           <li><i class="fa fa-sitemap"></i><a href="home.php">LIVE SITE</a></li>
        
               <?php
 		        if(isset($_SESSION['logged_in']) )
@@ -103,6 +108,21 @@ chart.render();
     </div>
       <script src="canvasjs.min.js"></script>
 
+	  <script>
+            window.onscroll = function() {myFunction()}; // kur useri ben scroll faqen, ekzekutohet myfunction()
+            // merr id hederi e run te header
+            var header = document.getElementById("myHeader");
+            //e merr pozicionin e kompensuar
+            var sticky = header.offsetTop;
+            
+            function myFunction() { // e te metoda myfunction mundeson qe
+              if (window.pageYOffset > sticky) { // nese don me bo scroll //duhet klasen sticky me shtu ne heder kur na bojm scroll 
+                header.classList.add("sticky"); 
+              } else {
+                header.classList.remove("sticky"); // edhe me hjek sticky kur na sbojm scroll me ta kthy nvend prap qysh je kon
+              }
+            }
+            </script>
 
 </div>
   </body>

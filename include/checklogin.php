@@ -27,15 +27,15 @@
 		$_SESSION['role']=$row['role'];
 
 		if($_SESSION['role']==2){
-		header( 'Location: ../Home.php' );
+		header( 'Location: ../home.php' );
 		}else{
-			header('Location:../AdminPage.php');
+			header('Location:../adminPage.php');
 			
 		}
 	}
  else {
 	 echo "<script type='text/javascript'> window.alert('Invalid username or password!');</script>";
-        header('refresh: 0; url= ../Login.php');
+        header('refresh: 0; url= ../login.php');
 	}
 	
 	ob_end_flush();
