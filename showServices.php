@@ -38,11 +38,10 @@ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/servicesController
  
  
 <?php 
-
-
-if(isset($_POST))
-{
-  $services->all();
-}
+  
+  if(isset($_POST))
+  {
+    $services->all();
+  }
 ?>
 

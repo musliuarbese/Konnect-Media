@@ -687,7 +687,6 @@ hr{
 }
 
 /*******************Admin Page gif**************/
-
 #welcomeAdmin{
 	width: 1100px;
     height: 300px;
@@ -698,7 +697,7 @@ hr{
     
 }
 
-#welcomeAdmin h2, p{
+#welcomeAdmin h1{
 	margin-top: 20px;
 	margin-left:30px;
 }

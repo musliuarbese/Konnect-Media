@@ -36,7 +36,7 @@
         ?>
         <img src="<?php echo $photo; ?>" />
                     
-        <?php
+<?php
 		echo'<div class="clear"></div>';
 		echo'<div class="hr3"></div>';
 		echo '====================================================================================================================================';
@@ -45,6 +45,6 @@
 	  }else{
 		  echo 'You should be signed in if you want to read post in this page!';
 	  }
-	?>
+?>
 </body>
 </html>

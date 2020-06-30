@@ -10,13 +10,13 @@
 
        
  <?php
-		if(isset($_SESSION['logged_in']) ){
-			echo "<li><a href = 'logout.php'><i class='fas fa-sign-in-alt' ></i>Log Out</a></li>";
-		}
-	  else{
-			echo " <li><a href ='login.php'><i class='fas fa-sign-in-alt' ></i>Login/Signup</a></li>";
-		}
+				if(isset($_SESSION['logged_in']) )
+				{
+			      echo "<li><a href = 'logout.php'><i class='fas fa-sign-in-alt' ></i>Log Out</a></li>";
+				}else
+				{
+			      echo " <li><a href ='login.php'><i class='fas fa-sign-in-alt' ></i>Login/Signup</a></li>";
+		        }
 	  ?>    
-   
-	</ul> 
-	</div>
+           </ul> 
+	   </div>

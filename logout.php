@@ -1,11 +1,11 @@
 <?php
-session_start();
+ session_start();
 
-// remove all session variables
-session_unset(); 
+ // remove all session variables
+ session_unset(); 
 
-// destroy the session 
-session_destroy(); 
+ // destroy the session 
+ session_destroy(); 
 
-header("location:./home.php");
+ header("location:./home.php");
 ?>

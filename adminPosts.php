@@ -47,45 +47,43 @@
                         <h1 id="Title1">Add Post</h1>
                         <div id="myForm">
                             <form method="POST" action="createPosts.php">
-
-                                <div class="clear1"></div>
-
-                                <p>
+                               <div class="clear1"></div>
+                                  <p>
                                     <label>Title*:
-                                        <input class="text-input" id="title" type="text" name="title" />
-                                    </label><span id="title_validation" class="error"></span></p>
+                                    <input class="text-input" id="title" type="text" name="title" />
+                                    </label><span id="title_validation" class="error"></span>
+                                  </p>
 
                                 <div class="clear1"></div>
-
-                                <p>
+                                   <p>
                                     <label>Subtitle:
-                                        <input class="text-input" id="subtitle" type="text" name="subtitle" />
-                                    </label><span id="subtitle_validation" class="error"></span></p>
+                                    <input class="text-input" id="subtitle" type="text" name="subtitle" />
+                                    </label><span id="subtitle_validation" class="error"></span>
+                                  </p>
 
                                 <div class="clear1"></div>
-
-                                <p>
-                                    <label>Content*:
-                                        <textarea id="message" name="content"></textarea>
-                                    </label><span id="content_validation" class="error"></span></p>
+                                    <p>
+                                      <label>Content*:
+                                      <textarea id="message" name="content"></textarea>
+                                      </label><span id="content_validation" class="error"></span>
+                                    </p>
 
                                 <div class="clear1"></div>
-
-                                <p>
+                                   <p>
                                     <label>Photo*:
-                                        <input class="text-input" id="photo" type="text" name="photo" />
-                                    </label><span id="photo_validation" class="error"></span></p>
+                                    <input class="text-input" id="photo" type="text" name="photo" />
+                                    </label><span id="photo_validation" class="error"></span>
+                                  </p>
 
                                 <div class="clear1"></div>
-
-                                <p>
-                                    <input type="submit" class="button" value="Post" />
-                                    <input type="reset" class="button" />
-                                    <a href = "showPosts.php">Show Posts</a>
-                                </p>
+                                    <p>
+                                     <input type="submit" class="button" value="Post" />
+                                     <input type="reset" class="button" />
+                                     <a href = "showPosts.php">Show Posts</a>
+                                   </p>
                                 <div class="clear1"></div>
                             </form>
-                        </div>
+                      </div>
 		<?php
 	  }
 	   else{

@@ -16,7 +16,7 @@ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/contactController.
                      <a href="adminPosts.php"><i class='fas fa-users'></i>Posts</a>
                      <a href="showContact.php"><i class='far fa-address-card'></i></i>User Contacts</a>
                      <a href="adminServices.php"><i class='far fa-clipboard'></i>Services</a></div></div></li>
-	           <li><i class="fa fa-sitemap"></i><a href="home.php">LIVE SITE</a></li>
+	              <li><i class="fa fa-sitemap"></i><a href="home.php">LIVE SITE</a></li>
        
               <?php
 		        if(isset($_SESSION['logged_in']) )

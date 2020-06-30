@@ -6,10 +6,10 @@ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/servicesController
 
  $services = new servicesController; 
 
-if(isset($_POST))
-{
+ if(isset($_POST))
+ {
     $services->store($_POST);
-}
+ }
 
 ?>
 

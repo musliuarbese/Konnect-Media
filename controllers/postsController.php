@@ -28,49 +28,76 @@ class postsController
         ?>
         
   <form method="POST" action="editPosts.php">
-  <div class ="clear">
-    <label for="posts_id">PostsID:
-    <input type="text" name="posts_id" value="<?php echo $posts_id;  ?>" id ="posts_id"/>
-  </div>
+    <div class ="clear">
+        <label for="posts_id">PostsID:
+        <input type="text" name="posts_id" value="<?php echo $posts_id;  ?>" id ="posts_id"/>
+    </div>
     <div class="clear1"></div>
         <label>Title:
         <input class="text-input" id="title" type="text" name="title" value = "<?php echo $title;?>"/>
-
     <div class="clear1"></div>
-      <label>Subtitle:
-      <input class="text-input" id="subtitle" type="text" name="subtitle" value = "<?php echo $subtitle;?>"/>
-
+        <label>Subtitle:
+        <input class="text-input" id="subtitle" type="text" name="subtitle" value = "<?php echo $subtitle;?>"/>
     <div class="clear1"></div>
-       <label>Content:
+        <label>Content:
         <textarea id="message" name="content" ><?php echo $content;?></textarea>
-
     <div class="clear1"></div>
-
-    <label>Photo:
+        <label>Photo:
         <input class="text-input" id="photo" type="text" name="photo" value = "<?php echo $photo;?>"/>
 
-        <div id = "butonat">
-  <input type="submit"  value="EDIT" name="edit"  class="formButoni" onclick="">
-  <input type="submit"  value="DELETE" name="delete" class="formButoni" onclick=""></a><br><br>
-  <hr>
+    <div id = "butonat">
+        <input type="submit"  value="EDIT" name="edit"  class="formButoni" onclick="">
+        <input type="submit"  value="DELETE" name="delete" class="formButoni" onclick=""></a><br><br>
+        <hr>
+    </div>
   </form>
  
  <?php }
      
-    }
+  }
     
     public function store($request)
     {
-        
-        $query = $this->db->pdo->prepare('INSERT INTO posts(title, subtitle, content, photo)
-        VALUES (:title, :subtitle, :content, :photo)');
-        $query->bindParam(':title', $request['title']);
-        $query->bindParam(':subtitle', $request['subtitle']);
-        $query->bindParam(':content', $request['content']);
-        $query->bindParam(':photo', $request['photo']);
-        $query->execute();
-        return header('Location: posts.php');
+      if(!empty($_POST['title']))
+      {
+        if(!empty($_POST['subtitle']))
+        {
+          if(!empty($_POST['content']))
+          {
+            if(!empty($_POST['photo']))
+            { 
+                        $query = $this->db->pdo->prepare('INSERT INTO posts(title, subtitle, content, photo)
+                        VALUES (:title, :subtitle, :content, :photo)');
+                        $query->bindParam(':title', $request['title']);
+                        $query->bindParam(':subtitle', $request['subtitle']);
+                        $query->bindParam(':content', $request['content']);
+                        $query->bindParam(':photo', $request['photo']);
+                        if($query->execute())
+							          {
+								          echo '<script type="text/javascript">window.alert("You succesfully post a Post!")</script>';
+								          header( "refresh:0; url=adminPosts.php" );
+							          }else{
+								          echo '<script type="text/javascript">window.alert("You did not post any POST!")</script>';
+								          header( "refresh:0; url=adminPosts.php" );
+					            	}
+				
+					}else{
+						echo '<script type="text/javascript">window.alert("You did NOT succesfully posted! ENTER THE PHOTO")</script>';
+						header( "refresh:0; url=adminPosts.php" );
+					}
+				}else{
+					echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE CONTENT")</script>';
+					header( "refresh:0; url=adminPosts.php" );
+        }
+      }else{
+        echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE SUBTITLE")</script>';
+        header( "refresh:0; url=adminPosts.php" );
+      }
+    }else{
+      echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE TITLE")</script>';
+      header( "refresh:0; url=adminPosts.php" );
     }
+  }
   
     public function update($posts_id, $request)
     {

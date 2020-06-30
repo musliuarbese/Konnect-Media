@@ -32,11 +32,10 @@ include('db_con.php');
 			      echo "<li><a href = 'logout.php'><i class='fas fa-sign-in-alt' ></i>Log Out</a></li>";
 		        }
 	         ?> 
-	     </ul> 
+	      </ul> 
+ </div>
 
-  </div>
 <h1> All Registered Users</h1>
-
 <?php
 $query = "Select * from signup";
 $result = mysqli_query($conn, $query);
@@ -53,29 +52,28 @@ while($row = mysqli_fetch_array($result)){
     ?>
 
     <div id = "showsignup">
-    <form action="update_signup.php" method="POST">
-    <div class="holder">
-        <label for="username">Username:<span class="green">*</span> </label>
-        <input type="text" name="username" value="<?php echo $username; ?>" id="username"/>
-      </div>
-      <div class="holder">
-       <br> <label for="name">Name:<span class="green">*</span> </label>
-        <input type="text" name="name" value="<?php echo $name; ?>" id="name"/>
-      </div>
-      <div class="holder">
-       <br> <label for="email">Email:<span class="green">*</span> </label>
-        <input type="text" name="email" value="<?php echo $email; ?>" id="email"/>
-      </div>
-	  <div class="holder">
-        <br><label for="email">Password:<span class="green">*</span> </label>
-        <input type="password" name="password" value="<?php echo $password; ?>" id="password"/>
-      </div>
-      <div class="clear"></div>
-
-     <br> <input type="submit" name="update"  value="Update" class="formButoni"  onclick=""/>
-     <input type="submit" name="delete"  value="Delete" class="formButoni"  onclick=""/>
-     <hr>
-    </form>
+      <form action="update_signup.php" method="POST">
+         <div class="holder">
+             <label for="username">Username:<span class="green">*</span> </label>
+             <input type="text" name="username" value="<?php echo $username; ?>" id="username"/>
+         </div>
+         <div class="holder">
+             <br><label for="name">Name:<span class="green">*</span> </label>
+             <input type="text" name="name" value="<?php echo $name; ?>" id="name"/>
+         </div>
+         <div class="holder">
+             <br><label for="email">Email:<span class="green">*</span> </label>
+             <input type="text" name="email" value="<?php echo $email; ?>" id="email"/>
+         </div>
+	       <div class="holder">
+             <br><label for="email">Password:<span class="green">*</span> </label>
+             <input type="password" name="password" value="<?php echo $password; ?>" id="password"/>
+         </div>
+        <div class="clear"></div>
+            <br> <input type="submit" name="update"  value="Update" class="formButoni"  onclick=""/>
+            <input type="submit" name="delete"  value="Delete" class="formButoni"  onclick=""/>
+         <hr>
+   </form>
 </div>
 <?php 
 }
@@ -90,10 +88,13 @@ while($row = mysqli_fetch_array($result)){
             //e merr pozicionin e kompensuar
             var sticky = header.offsetTop;
             
-            function myFunction() { // e te metoda myfunction mundeson qe
-              if (window.pageYOffset > sticky) { // nese don me bo scroll //duhet klasen sticky me shtu ne heder kur na bojm scroll 
+            function myFunction() 
+            { // e te metoda myfunction mundeson qe
+              if (window.pageYOffset > sticky)
+              { // nese don me bo scroll //duhet klasen sticky me shtu ne heder kur na bojm scroll 
                 header.classList.add("sticky"); 
-              } else {
+              }else
+              {
                 header.classList.remove("sticky"); // edhe me hjek sticky kur na sbojm scroll me ta kthy nvend prap qysh je kon
               }
             }

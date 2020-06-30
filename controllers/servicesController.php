@@ -26,30 +26,28 @@ class servicesController
        $content=$row['content'];
       
          ?>
-      <form action="editServices.php" class="form-contact" method="post" onsubmit = "edit(<?php $_POST['services_id']?>);">
-
-<div class="holder"> 
-     <label for="services_id">ServicesID:<span class="green"></span> </label>
-    <input type="text" name="services_id" value="<?php echo $services_id;  ?>" id ="services_id"/>
-      </div>
-   <div class = "holder">
-   <br><label for="title">Title: <span class="green"></span></label> 
-   <input name="title" id="title" value="<?php echo $title; ?>"></input>
- </div>
- <div class="holder"> 
-   <br><br><label for="icon">Icon: <span class="green"></span></label> 
-   <input name="icon" id="icon" value="<?php echo $icon; ?>"></input>
- </div>
- <div class="holder"> 
-   <br><br><label for="content">Content: <span class="green"></span></label>
-   <textarea rows="10" cols="10" name="content" id="content" ><?php echo $content;?></textarea> 
- </div><br>
- <div id = "butonat">
-  <input type="submit" name = "edit" value="EDIT" class="formButoni" onclick="">
-  <input type="submit"  name = "delete" value="DELETE" class="formButoni" onclick=""><br><br>
-  <hr>
-
-  </div>  
+        <form action="editServices.php" class="form-contact" method="post" onsubmit = "edit(<?php $_POST['services_id']?>);">
+           <div class="holder"> 
+              <label for="services_id">ServicesID:<span class="green"></span> </label>
+              <input type="text" name="services_id" value="<?php echo $services_id;  ?>" id ="services_id"/>
+           </div>
+           <div class = "holder">
+               <br><label for="title">Title: <span class="green"></span></label> 
+               <input name="title" id="title" value="<?php echo $title; ?>"></input>
+           </div>
+           <div class="holder"> 
+                <br><br><label for="icon">Icon: <span class="green"></span></label> 
+                <input name="icon" id="icon" value="<?php echo $icon; ?>"></input>
+          </div>
+          <div class="holder"> 
+                 <br><br><label for="content">Content: <span class="green"></span></label>
+                 <textarea rows="10" cols="10" name="content" id="content" ><?php echo $content;?></textarea> 
+          </div><br>
+          <div id = "butonat">
+                 <input type="submit" name = "edit" value="EDIT" class="formButoni" onclick="">
+                 <input type="submit"  name = "delete" value="DELETE" class="formButoni" onclick=""><br><br>
+        <hr>
+          </div>  
   </form>
      <?php 
 

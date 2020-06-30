@@ -7,11 +7,11 @@
 </head> 
 <?php
 
-require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/postsController.php';
+ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/postsController.php';
 
  $posts = new postsController; 
 
- ?>
+?>
 
 
 <div class = "header" id = "myHeader">
@@ -34,14 +34,12 @@ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/postsController.ph
 	         ?> 
 	     </ul> 
 
-    </div>
+</div>
  
- <?php 
-
-
-if(isset($_POST))
-{
-  $posts->all();
-}
+<?php 
+  if(isset($_POST))
+  {
+    $posts->all();
+  }
 ?>
 

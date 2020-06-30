@@ -44,34 +44,35 @@
       
 	  <div class="clear1"></div>
 	    <div class="holder">
-      <br><br><h4>Gender: </h4>
-      <fieldset>
-      <input type="radio" name="gender" value="male" class="radioB" checked= "checked" /> Male<br/>
-      <input type="radio" name="gender" value="female" class="radioB"/> Female<br/>
-      <span id="gender_validation" class="error"></span>
-      </fieldset></div>
+        <br><br><h4>Gender: </h4>
+    <fieldset>
+        <input type="radio" name="gender" value="male" class="radioB" checked= "checked" /> Male<br/>
+        <input type="radio" name="gender" value="female" class="radioB"/> Female<br/>
+        <span id="gender_validation" class="error"></span>
+    </fieldset></div>
 	  <div class="clear1"></div>
 	   <div class="holder">
       <br><h4>Profesioni: </h4>
-      <fieldset>
+    <fieldset>
       <input type="checkbox" name="employeed[]"  class="radioB" value="Profesor"/>Profesor<br/>
   	  <input type="checkbox" name="employeed[]" class="radioB" value="Student"/>Student<br/>
   	  <input type="checkbox" name="employeed[]" class="radioB" value="I papune"/>I papune<br/>
-     </fieldset></div>
+    </fieldset></div>
      <div class="clear1"></div>
-	  <div class="holder">
-    <br><h4>Your Country</h4>
-      <fieldset>
+	<div class="holder">
+      <br><h4>Your Country</h4>
+    <fieldset>
       <select name="country">
         <option value="Kosova">Kosova</option>
         <option value="Shqiperia">Shqiperia</option>
         <option value="USA">USA</option>
         <option value="Germany">Germany</option>
-        </select>
-      </fieldset></div>
-	  <div class="clear1"></div>
-	  <div class="holder">
-     <br><br><label for="subject" id="subject">Subject:<span class ="green">*</span></label>
+      </select>
+    </fieldset>
+  </div>
+	   <div class="clear1"></div>
+	   <div class="holder">
+        <br><br><label for="subject" id="subject">Subject:<span class ="green">*</span></label>
         <input type="text" name="subject"  value=""/>
       </div>
       <div class="holder">

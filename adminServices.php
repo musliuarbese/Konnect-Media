@@ -37,28 +37,28 @@
       if(isset($_SESSION['logged_in']) ){ 
     ?>
 <div id = "service">
-<h1>ADD SERVICES</h1>
-<form action="createServices.php" class="form-contact" method="post" onsubmit = "">
-
-<div class="holder"> 
-   <br><br><label for="title">Title: <span class="green"></span></label> 
-   <input name="title" id="title" value=""></input>
- </div>
- <div class="holder"> 
-   <br><br><label for="icon">Icon: <span class="green"></span></label> 
-   <input name="icon" id="icon" value=""></input>
- </div>
- <div class="holder"> 
-   <br><br><label for="content">Message: <span class="green"></span></label>
-   <textarea rows="10" cols="10" name="content" id="content" value = ""></textarea>
- </div><br>
- <div id = "butonat">
- <input type="submit"  value="SEND" class="formButoni"/>
-  <a href = "showServices.php">Show Services</a>
-  </div>  
+  <h1>ADD SERVICES</h1>
+    <form action="createServices.php" class="form-contact" method="post" onsubmit = "">
+      <div class="holder"> 
+        <br><br><label for="title">Title: <span class="green"></span></label> 
+        <input name="title" id="title" value=""></input>
+     </div>
+     <div class="holder"> 
+        <br><br><label for="icon">Icon: <span class="green"></span></label> 
+        <input name="icon" id="icon" value=""></input>
+     </div>
+     <div class="holder"> 
+        <br><br><label for="content">Message: <span class="green"></span></label>
+        <textarea rows="10" cols="10" name="content" id="content" value = ""></textarea>
+     </div><br>
+     <div id = "butonat">
+        <input type="submit"  value="SEND" class="formButoni"/>
+        <a href = "showServices.php">Show Services</a>
+     </div>  
   </form>
 </div>
-      <?php }?>
-      </body>
-      </html>
+<?php }?>
+
+</body>
+</html>
  

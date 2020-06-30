@@ -13,26 +13,31 @@ if((isset($_POST["update"]))) {
     echo "Data has been updated";
     echo "Refreshing the page";
    
-    if($_SESSION['role']==2){
+    if($_SESSION['role']==2)
+    {
          header("refresh: 2; http://localhost/ProjektiWeb_ArbeseMusliu/include/edit_signup.php");
     }else{
          header("refresh: 2; http://localhost/ProjektiWeb_ArbeseMusliu/include/show_signup.php");
     }
 }
 
-if((isset($_POST["delete"]))) {//e kqyr a egziston qaj mision
+  if((isset($_POST["delete"])))
+  {//e kqyr a egziston qaj mision
     $sql = "DELETE FROM signup WHERE username = '$username'";
-   if(mysqli_query($conn, $sql)){
+     if(mysqli_query($conn, $sql))
+     {
        echo "u fshi me sukses";
-       if($_SESSION['role']==2){
-        header("refresh: 2; http://localhost/ProjektiWeb_ArbeseMusliu/logout.php");
-   }else{
+       if($_SESSION['role']==2)
+       {
+         header("refresh: 2; http://localhost/ProjektiWeb_ArbeseMusliu/logout.php");
+       }else
+       {
         header("refresh: 2; http://localhost/ProjektiWeb_ArbeseMusliu/include/show_signup.php");
-   }
+       }
        
-   }else{
+     }else{
         echo ("Gabim gjate fshirjes" . $conn->connect_error);
-   }
+    }
 
-}
+ }
 ?>

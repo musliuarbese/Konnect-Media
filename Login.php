@@ -15,31 +15,30 @@ background-color:rgb(0, 51, 77);">
 		margin:0 auto;
 		background-color:white;
 		background-repeat: no-repeat;" >
-     <div id="login">
+ <div id="login">
 			<h1>Login on KonnektMedia</h1>
 		 <img src = "img/securityuser.jpg">
      <form action="include/checklogin.php" method="POST" onsubmit="">
-      
-	   <h3>E-mail address:</h3>
-
-		 <fieldset>
-	 	 <input type="text" name="email" value="" id="email"/>
+        <h3>E-mail address:</h3>
+        <fieldset>
+	 	  <input type="text" name="email" value="" id="email"/>
 	 	  <span id="email_validation" class="error"></span>
 		</fieldset>
 	 	  <h3>Password:</h3> 
-	 	  <fieldset>
+	 	<fieldset>
     	  <input type="password" id="password" name="password" value=""/>
-     	 <span id="pwd_validation" class="error"></span><br><br>
-	 	  </fieldset>
-		   <fieldset>
-		<input type="submit" class="loginButtoni" value="LOGIN" onclick=""/>
+     	  <span id="pwd_validation" class="error"></span><br><br>
+	 	</fieldset>
+		<fieldset>
+		  <input type="submit" class="loginButtoni" value="LOGIN" onclick=""/>
 		</fieldset>
 	</form>
-		</div>
+ </div>
 		<div id="notRegistered">
-		<h1>Not a member ? Sign Up Here</h1>
-	    <a href = "Signup.php"><input type="submit" class="loginButtoni" value="SIGN UP" onclick=""> </a>
+		  <h1>Not a member ? Sign Up Here</h1>
+	      <a href = "Signup.php"><input type="submit" class="loginButtoni" value="SIGN UP" onclick=""> </a>
 		</div>
-	</div> 
+</div> 
+
 </body>
 </html>

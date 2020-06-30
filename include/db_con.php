@@ -11,7 +11,8 @@ $database	= 'k_mdatabase';
 
 $conn = new mysqli($server, $username, $password, $database);
 
-  if($conn->connect_error){
+  if($conn->connect_error)
+  {
 	  die("Ka problem ne qasje ne DB" .$conn->connect_error);
   }
 ?>
