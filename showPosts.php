@@ -1,5 +1,5 @@
-   <head>
-<title>Show Services - Konnect Media</title>
+<head>
+<title>Show Posts - Konnect Media</title>
     <link rel="stylesheet" type="text/css" href="Style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -7,9 +7,9 @@
 </head> 
 <?php
 
-require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/servicesController.php';
+require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/postsController.php';
 
- $services = new servicesController; 
+ $posts = new postsController; 
 
  ?>
 
@@ -36,13 +36,12 @@ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/servicesController
 
     </div>
  
- 
-<?php 
+ <?php 
 
 
 if(isset($_POST))
 {
-  $services->all();
+  $posts->all();
 }
 ?>
 

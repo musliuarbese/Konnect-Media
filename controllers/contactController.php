@@ -54,18 +54,68 @@ class contactController
     
     public function store($request)
     {
+      if(!empty($_POST['name']))
+      {
+        if(!empty($_POST['email']))
+        {
+          if(!empty($_POST['gender']))
+          {
+            if(!empty($_POST['employeed']))
+            {
+              if(!empty($_POST['country']))
+              {
+                if(!empty($_POST['subject']))
+                {
+                  if(!empty($_POST['message']))
+                  {
         
-        $query = $this->db->pdo->prepare('INSERT INTO contact(name, email, gender, employeed, country, subject, message)
-        VALUES (:name, :email, :gender, :employeed, :country, :subject, :message)');
-        $query->bindParam(':name', $request['name']);
-        $query->bindParam(':email', $request['email']);
-        $query->bindParam(':gender', $request['gender']);
-        $query->bindParam(':employeed', $request['employeed']);
-        $query->bindParam(':country', $request['country']);
-        $query->bindParam(':subject', $request['subject']);
-        $query->bindParam(':message', $request['message']);
-        $query->execute();
-        return header('Location: home.php');
+                            $query = $this->db->pdo->prepare('INSERT INTO contact(name, email, gender, employeed, country, subject, message)
+                            VALUES (:name, :email, :gender, :employeed, :country, :subject, :message)');
+                            $query->bindParam(':name', $request['name']);
+                            $query->bindParam(':email', $request['email']);
+                            $query->bindParam(':gender', $request['gender']);
+                            $query->bindParam(':employeed', $request['employeed']);
+                            $query->bindParam(':country', $request['country']);
+                            $query->bindParam(':subject', $request['subject']);
+                            $query->bindParam(':message', $request['message']);
+                               if($query->execute())
+							          {
+								          echo '<script type="text/javascript">window.alert("You succesfully regristred a contact!")</script>';
+								          header( "refresh:0; url=adminServices.php" );
+							          }else{
+								          echo '<script type="text/javascript">window.alert("You did not regristed any contact!")</script>';
+								          header( "refresh:0; url=adminServices.php" );
+					   }
+				
+					}else{
+						echo '<script type="text/javascript">window.alert("You did NOT succesfully posted! ENTER THE MESSAGE")</script>';
+						header( "refresh:0; url=adminServices.php" );
+					}
+				}else{
+					echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE SUBJECT")</script>';
+					header( "refresh:0; url=adminServices.php" );
+        }
+      }else{
+        echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE COUNTRY")</script>';
+        header( "refresh:0; url=adminServices.php" );
+      }
+
+   }else{
+      echo '<script type="text/javascript">window.alert("You did NOT succesfully posted! ENTER THE EMPLOYEED")</script>';
+      header( "refresh:0; url=adminServices.php" );
+   }
+}else{
+echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE GENDER")</script>';
+header( "refresh:0; url=adminServices.php" );
+}
+}else{
+echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE EMAIL")</script>';
+header( "refresh:0; url=adminServices.php" );
+}
+}else{
+   echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE NAME")</script>';
+   header( "refresh:0; url=adminServices.php" );
+   }
     }
    
     public function destroy($contact_id)

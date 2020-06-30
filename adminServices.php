@@ -54,7 +54,7 @@
  </div><br>
  <div id = "butonat">
  <input type="submit"  value="SEND" class="formButoni"/>
-  <a href = "editServices.php"><input type="submit"  value="EDIT" class="formButoni" onclick="edit(<?php $_POST['services_id']?>);">
+  <a href = "showServices.php">Show Services</a>
   </div>  
   </form>
 </div>

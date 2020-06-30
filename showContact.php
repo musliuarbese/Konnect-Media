@@ -9,12 +9,13 @@ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/contactController.
 <div class = "header" id = "myHeader">
         <a href="Home.html"> <img src="img/konnect-media.png"></a>
           <ul id="header-menu">
-             <li><i class="fa fa-dashboard"></i><a href="adminPage.php">MY DASHBOARD</a></li>
+             <li><i class='far fa-list-alt'></i><a href="adminPage.php">MY DASHBOARD</a></li>
 			       <li><i class='far fa-images'></i><div class="dropdown"><button class="dropbtn"><a href="#">USER</a></button>
                      <div class="dropdown-content">
-                     <a href="adminPosts.php"><i class='fas fa-users'></i>Show User</a>
-                     <a href="showContact.php"><i class="material-icons"></i>User Contacts</a>
-                     <a href="adminServices"><i class='far fa-clipboard'></i>Services</a></div></div></li>
+                     <a href="include/show_signup.php"><i class='fas fa-users'></i>Show Users</a> 
+                     <a href="adminPosts.php"><i class='fas fa-users'></i>Posts</a>
+                     <a href="showContact.php"><i class='far fa-address-card'></i></i>User Contacts</a>
+                     <a href="adminServices.php"><i class='far fa-clipboard'></i>Services</a></div></div></li>
 	           <li><i class="fa fa-sitemap"></i><a href="home.php">LIVE SITE</a></li>
        
               <?php
@@ -23,12 +24,9 @@ require 'C:/xampp/htdocs/ProjektiWeb_ArbeseMusliu/controllers/contactController.
 			      echo "<li><a href = 'logout.php'><i class='fas fa-sign-in-alt' ></i>Log Out</a></li>";
 		        }
 	         ?> 
-         </ul> 
+	     </ul> 
 
     </div>
-
-
-
 
 <?php 
 if(isset($_POST)){

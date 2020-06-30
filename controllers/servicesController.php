@@ -45,38 +45,52 @@ class servicesController
    <textarea rows="10" cols="10" name="content" id="content" ><?php echo $content;?></textarea> 
  </div><br>
  <div id = "butonat">
-  <input type="submit"  value="EDIT" class="formButoni" onclick=""><br><br>
+  <input type="submit" name = "edit" value="EDIT" class="formButoni" onclick="">
+  <input type="submit"  name = "delete" value="DELETE" class="formButoni" onclick=""><br><br>
   <hr>
 
   </div>  
   </form>
      <?php 
+
     }
   }
     
     public function store($request)
     {
-        
-        $query = $this->db->pdo->prepare('INSERT INTO services(title, icon, content) 
-        VALUES (:title, :icon, :content)');
-        $query->bindParam(':title', $request['title']);
-        $query->bindParam(':icon', $request['icon']);
-        $query->bindParam(':content', $request['content']);
-        $query->execute();
-        return header('Location: services.php');
-    }
-    public function edit($services_id)
-    {
-        $query = $this->db->pdo->prepare('SELECT * FROM services WHERE services_id = :services_id');
-        $query->execute(['services_id' => $services_id]);
-        return $query->fetch();
-
-          if(isset($_POST['submit'])){
-          $title = $_POST['title'];
-          $icon = $_POST['icon'];
-          $content = $_POST['content'];
-          return header('Location: showServices.php');
+      if(!empty($_POST['title']))
+      {
+        if(!empty($_POST['icon']))
+        {
+          if(!empty($_POST['content']))
+          {
+                   $query = $this->db->pdo->prepare('INSERT INTO services(title, icon, content) 
+                   VALUES (:title, :icon, :content)');
+                   $query->bindParam(':title', $request['title']);
+                   $query->bindParam(':icon', $request['icon']);
+                   $query->bindParam(':content', $request['content']);
+                   // return header('Location: services.php');
+              if($query->execute())
+							{
+								echo '<script type="text/javascript">window.alert("You succesfully post a services!")</script>';
+								header( "refresh:0; url=adminServices.php" );
+							}else{
+								echo '<script type="text/javascript">window.alert("You did not post any service!")</script>';
+								header( "refresh:0; url=adminServices.php" );
+						}
+				
+					}else{
+						echo '<script type="text/javascript">window.alert("You did NOT succesfully posted! ENTER THE CONTENT")</script>';
+						header( "refresh:0; url=adminServices.php" );
+					}
+				}else{
+					echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE ICON")</script>';
+					header( "refresh:0; url=adminServices.php" );
         }
+      }else{
+        echo '<script type="text/javascript">window.alert("You DID NOT succesfully posted! ENTER THE TITLE")</script>';
+        header( "refresh:0; url=adminServices.php" );
+      }
     }
     public function update($services_id, $request)
     {
@@ -93,7 +107,7 @@ class servicesController
     {
         $query = $this->db->pdo->prepare('DELETE from services WHERE services_id = :services_id');
         $query->execute(['services_id' => $services_id]);
-      // return header('Location: deleteContact.php');
+       return header('Location: showServices.php');
     }
 }
 ?>

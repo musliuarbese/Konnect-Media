@@ -81,6 +81,7 @@
                                 <p>
                                     <input type="submit" class="button" value="Post" />
                                     <input type="reset" class="button" />
+                                    <a href = "showPosts.php">Show Posts</a>
                                 </p>
                                 <div class="clear1"></div>
                             </form>
