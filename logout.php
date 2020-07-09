@@ -7,5 +7,5 @@
  // destroy the session 
  session_destroy(); 
 
- header("location:./home.php");
+ header("location:./index.php");
 ?>

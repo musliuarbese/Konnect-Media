@@ -8,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Services-Konnect Media</title>
-        <link rel="stylesheet" type="text/css" href="Style.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
@@ -20,7 +20,8 @@
 <?php
 if(isset($_SESSION['logged_in']) )
 {
-    ?>  <div id="serviceTitle">
+    ?>  
+        <div id="serviceTitle">
             <h1>Our Marketing Services</h1>
             <h3>***************************</h3>
         </div>
@@ -42,14 +43,18 @@ if(isset($_SESSION['logged_in']) )
          <p>
              <?php echo $content ?>
          </p>
+         <input type = "button" class = "find find3" name = "find" value = "=> SWIPE HERE FOR MORE =>" onclick = "">
     </div>
 		<?php
 	}
 }else{
-		  echo 'You should be signed in if you want to read post in this page!';
-	  }
+		   echo 'You should be signed in if you want to see services in this page!';
+	   }
 	?>
-          
+    <?php
+	    include('include/footer.php');
+    ?>
+    
         <script>
             window.onscroll = function() {myFunction()}; // kur useri ben scroll faqen, ekzekutohet myfunction()
             // merr id hederi e run te header
@@ -64,6 +69,7 @@ if(isset($_SESSION['logged_in']) )
                 header.classList.remove("sticky"); // edhe me hjek sticky kur na sbojm scroll me ta kthy nvend prap qysh je kon
               }
             }
-            </script>
+          </script>
+
     </body>
 </html>

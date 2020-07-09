@@ -24,6 +24,7 @@ class servicesController
         $title =$row['title'];
         $icon=$row['icon'];
        $content=$row['content'];
+       $services_author=$row['services_author'];
       
          ?>
         <form action="editServices.php" class="form-contact" method="post" onsubmit = "edit(<?php $_POST['services_id']?>);">
@@ -42,6 +43,12 @@ class servicesController
           <div class="holder"> 
                  <br><br><label for="content">Content: <span class="green"></span></label>
                  <textarea rows="10" cols="10" name="content" id="content" ><?php echo $content;?></textarea> 
+          </div><br>
+          <div class = "holder">
+              <?php if(isset($_SESSION['logged_in']) ){
+              ?>
+                <input type="text" id="services_author"name="services_author" value = "<?php echo $name = $_SESSION['name'];?>" />
+                <?php }?>
           </div><br>
           <div id = "butonat">
                  <input type="submit" name = "edit" value="EDIT" class="formButoni" onclick="">
@@ -62,12 +69,12 @@ class servicesController
         {
           if(!empty($_POST['content']))
           {
-                   $query = $this->db->pdo->prepare('INSERT INTO services(title, icon, content) 
-                   VALUES (:title, :icon, :content)');
+                   $query = $this->db->pdo->prepare('INSERT INTO services(title, icon, content, services_author) 
+                   VALUES (:title, :icon, :content, :services_author)');
                    $query->bindParam(':title', $request['title']);
                    $query->bindParam(':icon', $request['icon']);
                    $query->bindParam(':content', $request['content']);
-                   // return header('Location: services.php');
+                   $query->bindParam(':services_author', $request['services_author']);
               if($query->execute())
 							{
 								echo '<script type="text/javascript">window.alert("You succesfully post a services!")</script>';
@@ -92,11 +99,12 @@ class servicesController
     }
     public function update($services_id, $request)
     {
-        $query = $this->db->pdo->prepare('UPDATE services SET title = :title, icon = :icon, content = :content WHERE services_id = :services_id');
+        $query = $this->db->pdo->prepare('UPDATE services SET title = :title, icon = :icon, content = :content, services_author = :services_author WHERE services_id = :services_id');
         $query->execute([
             'title' => $request['title'],
             'icon' => $request['icon'],
             'content' => $request['content'],
+            'services_author' => $request['services_author'],
             'services_id' => $request['services_id']
         ]);
         return header('Location: showServices.php');

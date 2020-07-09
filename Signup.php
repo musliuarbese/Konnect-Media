@@ -4,10 +4,12 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sign Up - Konnect Media</title>
-<link rel="stylesheet" type="text/css" href="Style.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
 <script src="myjavascript.js" type="text/javascript"></script>
 <style> .error {color: #FF0000;} </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
 <body>

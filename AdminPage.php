@@ -5,7 +5,7 @@
 ?>
 
 <?php
-   $query = "SELECT role, count(*) as number FROM signup GROUP BY role";
+   $query = "SELECT role, count(*) FROM signup GROUP BY role";
    $result = mysqli_query($conn, $query);
    $adminCount=$row = mysqli_fetch_array($result)[0];
    $simpleCount=$row = mysqli_fetch_array($result)[1];
@@ -13,10 +13,21 @@
    $var="SELECT count(*) FROM posts";
    $result = mysqli_query($conn, $var);
    $postCount=$row = mysqli_fetch_array($result)[0];
+
+   $var="SELECT count(*) FROM services";
+   $result = mysqli_query($conn, $var);
+   $serviceCount=$row = mysqli_fetch_array($result)[0];
+
+   $var="SELECT count(*) FROM contact";
+   $result = mysqli_query($conn, $var);
+   $contactCount=$row = mysqli_fetch_array($result)[0];
+
    $dataPoints = array( 
 	 array("label"=>"Admin", "y"=>$adminCount),
 	 array("label"=>"Simple User", "y"=>$simpleCount),
-	 array("label"=>"Posts", "y"=>$postCount),
+   array("label"=>"Posts", "y"=>$postCount),
+   array("label"=>"Services", "y"=>$serviceCount),
+   array("label"=>"Contact Users", "y"=>$contactCount),
 	)
  
 ?>
@@ -28,7 +39,7 @@
 
 <head>
     <title>Admin Dashboard - Konnect Media</title>
-    <link rel="stylesheet" type="text/css" href="Style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -47,7 +58,7 @@
 	 }],
 	 data: [{
 		type: "pie",
-		yValueFormatString: "#,##0.00\"%\"",
+		yValueFormatString: "#,##0.00\"\"",
 		indexLabel: "{label} ({y})",
 		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	 }]
@@ -59,18 +70,17 @@
 </head>
 
 <body>
-
     <div class = "header" id = "myHeader">
-        <a href="Home.html"> <img src="img/konnect-media.png"></a>
+        <img src="img/konnect-media.png"></a>
           <ul id="header-menu">
              <li><i class='far fa-list-alt'></i><a href="adminPage.php">MY DASHBOARD</a></li>
-			       <li><i class='far fa-images'></i><div class="dropdown"><button class="dropbtn"><a href="#">USER</a></button>
+			       <li><i class='fas fa-user-lock'></i><div class="dropdown"><button class="dropbtn"><a href="#">Manage</a></button>
                      <div class="dropdown-content">
                      <a href="include/show_signup.php"><i class='fas fa-users'></i>Show Users</a> 
                      <a href="adminPosts.php"><i class='fas fa-users'></i>Posts</a>
                      <a href="showContact.php"><i class='far fa-address-card'></i></i>User Contacts</a>
                      <a href="adminServices.php"><i class='far fa-clipboard'></i>Services</a></div></div></li>
-	           <li><i class="fa fa-sitemap"></i><a href="home.php">LIVE SITE</a></li>
+	           <li><i class="fa fa-sitemap"></i><a href="index.php">LIVE SITE</a></li>
        
               <?php
 		        if(isset($_SESSION['logged_in']) )
@@ -81,25 +91,22 @@
 	      </ul> 
 
    </div>
+
 	<?php $_SESSION['logged_in'];
 	$name = $_SESSION['name']; ?>
-<div id = "welcomeAdmin" style = "width: 1200px;
-    height: 200px;
-    margin-bottom: 60px;
-    background-color: rgb(179, 204, 204);
-	  border-radius: 10px; margin-left:60px;">
-	<img src = "img/hellogif.gif" style = "float:right; width:210px;">
-	  <div style = "margin-left:30px;"> 
-	    <h1 style = "margin-top:30px;">Welcome Back! <?php $_SESSION['logged_in']='name';?></h1>
+<div id = "welcomeAdmin">
+	<img src = "img/hellogif.gif">
+	  <div id = "welcomeuser">
+      <legend>Welcome Back! &nbsp;<?php echo $name; ?></legend>
 	    <p>You have completed 40% of your goal this week</p>
 	    <p>Start a new goal & improve your result</p>
-  </div>  
+    </div>  
 </div>
 	 
 
-	<div id="chartContainer" style="float:center; height: 400px; width: 100%;">
+	<div id="chartContainer">
     </div>
-      <script src="canvasjs.min.js"></script>
+     <script src="canvasjs.min.js"></script>
 <?php
 include('include/footer.php');
 ?>
@@ -119,7 +126,7 @@ include('include/footer.php');
             }
             </script> -->
 
-</div>
+
   </body>
 
   </html>

@@ -1,8 +1,8 @@
 
         <div class = "header" id = "myHeader">
-            <a href="Home.html"> <img src="img/konnect-media.png"></a>
+            <img src="img/konnect-media.png"></a>
             <ul id="header-menu">
-                <li> <a class = "active" href="home.php"><i class="fa fa-fw fa-home"></i>HOME</a></li>
+                <li> <a class = "active" href="index.php"><i class="fa fa-fw fa-home"></i>HOME</a></li>
 				<li> <a href="aboutus.php"><i class="fa fa-group"></i>ABOUT US</a></li>
 				<li> <a href="services.php"><i class='far fa-clipboard'></i>SERVICES</a></li>
 				<li> <a href="posts.php"><i class='far fa-images'></i>POSTS</a></li>

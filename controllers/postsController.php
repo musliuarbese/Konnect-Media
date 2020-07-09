@@ -25,6 +25,7 @@ class postsController
         $subtitle =$row['subtitle'];
         $content=$row['content'];
         $photo=$row['photo'];
+        $post_author=$row['post_author'];
         ?>
         
   <form method="POST" action="editPosts.php">
@@ -44,7 +45,11 @@ class postsController
     <div class="clear1"></div>
         <label>Photo:
         <input class="text-input" id="photo" type="text" name="photo" value = "<?php echo $photo;?>"/>
-
+    <div class="clear1"></div>
+      <?php if(isset($_SESSION['logged_in']) ){
+      ?>
+         <input type="text" id="post_author"name="post_author" value = "<?php echo $name = $_SESSION['name'];?>" />
+          <?php }?>
     <div id = "butonat">
         <input type="submit"  value="EDIT" name="edit"  class="formButoni" onclick="">
         <input type="submit"  value="DELETE" name="delete" class="formButoni" onclick=""></a><br><br>
@@ -66,12 +71,13 @@ class postsController
           {
             if(!empty($_POST['photo']))
             { 
-                        $query = $this->db->pdo->prepare('INSERT INTO posts(title, subtitle, content, photo)
-                        VALUES (:title, :subtitle, :content, :photo)');
+                        $query = $this->db->pdo->prepare('INSERT INTO posts(title, subtitle, content, photo, post_author)
+                        VALUES (:title, :subtitle, :content, :photo, :post_author)');
                         $query->bindParam(':title', $request['title']);
                         $query->bindParam(':subtitle', $request['subtitle']);
                         $query->bindParam(':content', $request['content']);
                         $query->bindParam(':photo', $request['photo']);
+                        $query->bindParam(':post_author', $request['post_author']);
                         if($query->execute())
 							          {
 								          echo '<script type="text/javascript">window.alert("You succesfully post a Post!")</script>';
@@ -101,12 +107,13 @@ class postsController
   
     public function update($posts_id, $request)
     {
-        $query = $this->db->pdo->prepare('UPDATE posts SET title = :title, subtitle = :subtitle, content = :content, photo = :photo WHERE posts_id = :posts_id');
+        $query = $this->db->pdo->prepare('UPDATE posts SET title = :title, subtitle = :subtitle, content = :content, photo = :photo, post_author = :post_author WHERE posts_id = :posts_id');
         $query->execute([
             'title' => $request['title'],
             'subtitle' => $request['subtitle'],
             'content' => $request['content'],
             'photo' => $request['photo'],
+            'post_author' => $request['post_author'],
             'posts_id' => $request['posts_id']
         ]);
         return header('Location: showPosts.php');

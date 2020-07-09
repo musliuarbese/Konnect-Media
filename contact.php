@@ -8,9 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Contact - Konnect Media</title>
-<link rel="stylesheet" type="text/css" href="Style.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="myjavascript.js" type="text/javascript"></script>
+<!-- <script src="myjavascript.js" type="text/javascript"></script> -->
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <style> .error {color: #FF0000;} </style>
 </head>
@@ -30,7 +30,7 @@
     <p><strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</strong> </p>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     <p><em>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</em></p>
-    <form action="createContact.php" class="form-contact" method="post" onsubmit="validateForm();">
+    <form action="createContact.php" class="form-contact" method="post" onsubmit="">
       <div class="holder">
         <label for="name">Name:<span class="green">*</span> </label>
         <input type="text" name="name" value="" id="name"/>

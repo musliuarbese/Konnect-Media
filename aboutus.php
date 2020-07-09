@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>About us - Konnect Media</title>
-<link rel="stylesheet" type="text/css" href="Style.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
@@ -20,29 +20,29 @@
 
 <div id="aboutus">
      <p>WHY <b>WORK WITH US</b></p>
-  <div id = "lists">
+     <div id = "lists">
      <div class = "check"><i class = "far fa-check-circle">We love to design.</i><br></div>
      <div class = "check"><i class = "far fa-check-circle">We’re experienced & passionate.</i><br></div>
      <div class = "check"><i class = "far fa-check-circle">We deliver on time and on budget.</i><br></div>
      <div class = "check"><i class ="far fa-check-circle">We are creative.</i></div>
      <div class = "check"><i class ="far fa-check-circle">We provide excellent after sales support.</i></div>
- </div>
+</div>
 </div>
 
  <div id = "projects">
      <h2>SOME OF OUR PREVIOUS CLIENTS</h2>
      <img src="img/icon.png">
-  <div class = "images">
-     <img src = "img/ultimate.png">
-     <img src = "img/nvidia.jpg">
-     <img src = "img/docu.png">
-     <img src = "img/edward.jpg">
+     <div class = "images">
+    <img src = "img/ultimate.png">
+    <img src = "img/nvidia.jpg">
+    <img src = "img/docu.png">
+    <img src = "img/edward.jpg">
 </div>
-  </div>
+</div>
 <div id = "more">
         <h2><img src = "img/km.png">THIS IS KONNECT MEDIA</h2>
        <p> Love all things design. Designing beautiful websites<br> that attract customers to your business is our passion.</p>
-</div>
+    </div>
 <div id = "webmaintenance" style = "margin-top: 100px;">
         <legend>WEBSITE <b>MAINTENANCE</legend>
             <p> Website maintenance can help keep your customers or clients informed<br>
@@ -58,11 +58,11 @@
                 be vital to keep your site updated to the latest version of WordPress or<br>
                 any plugins installed on the system. Regular backups of your<br>
                 website files and database would also be essential as a precaution.
-</div>
+    </div>
 
   <div class="team"> 
              <img src="img/teamwork.jpg">
-  </div>
+        </div>
         <?php include('include/footer.php');?>
 
       <script>

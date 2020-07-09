@@ -4,6 +4,7 @@ $username = $_POST['username'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$password=sha1('password'); 
 
 if((isset($_POST["update"]))) {
    
